@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'obs.obs_department',
     'obs.obs_student',
     'obs.obs_management',
+    'obs.obs_lecturer',
 ]
 
 MIDDLEWARE_CLASSES = [
