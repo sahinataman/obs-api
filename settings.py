@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'obs.obs_faculty',
     'obs.obs_department',
+    'obs.obs_student',
 ]
 
 MIDDLEWARE_CLASSES = [
