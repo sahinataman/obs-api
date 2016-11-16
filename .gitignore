@@ -1,20 +1,11 @@
-con?
-
+Icon?
 **/Icon?
-
 *.DS_Store
-
 .DS_Store
-
-
 
 ;; gitignore for Django using pyCharm
 
 ;;
-
-
-
-
 
 ;;extensions to ignore
 
@@ -27,7 +18,7 @@ con?
 
 
 ;;directories to ignore
-
+/media
 settings.py
 
 
