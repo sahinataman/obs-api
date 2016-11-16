@@ -17,6 +17,7 @@ class Student(models.Model):
     birthdate = models.CharField(max_length=20)
     phone = models.CharField(max_length=12,blank=True, null=True)
     department = models.ForeignKey(Department)
+    image = models.ImageField(upload_to="students")
 
     def __str__(self):
         return self.user.first_name+" "+self.user.last_name

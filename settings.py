@@ -48,6 +48,13 @@ INSTALLED_APPS = [
     'obs.obs_offered_course',
     'obs.obs_register',
     'obs.obs_register_note',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth',
+    'rest_auth.registration',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -62,6 +69,21 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'obs.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+    # rest auth throttle rate
+    # django-rest-auth.readthedocs.io/en/latest/configuration.html#throttling
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '6/m',
+        'register_view':'1/h',
+    },
+    'PAGE_SIZE': 10,
+
+}
 
 TEMPLATES = [
     {
@@ -129,4 +151,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+SITE_ID = 1
+
 STATIC_URL = '/static/'
+STATIC_ROOT = '/Users/ufuk/Desktop/obs/obs/static'
+
+MEDIA_ROOT = '/Users/ufuk/Desktop/obs/obs/obs/media/'
+MEDIA_URL = '/media/'
+
+STATICFILES_DIR = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+
